@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}{{ b.title }}{% endblock %}
+
+{% block right %}
+	<div class="blog">
+	<p><a href= '/blog/{{ b.id }}/'>{{ b.title|upper }}</a></p>
+	<p class = 'date'>{{ b.pub_date|date:"SHORT_DATE_FORMAT" }}</p>
+	<br/>
+	<div class="content">
+		{% for i in b.images.all %}
+		 <img src = "{{ i.image.url }}" width = "700px" />
+		 <br/><br/>
+		{% endfor %}
+	</div>
+	</div>
+{% endblock %}

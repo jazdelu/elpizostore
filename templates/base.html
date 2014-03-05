@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="keywords" content="Woman Fashion "/>
+<meta name="Description" content="Welcome to Elpizo, ahigh-end fashion brand where modern design meets the classics."/>
+<title>{% block title %}{% endblock %}</title>
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+{% block style %}{% endblock %}
+</head>
+<body>
+<div class="topInner">
+<a href ='#'><img src="/static/images/logo.gif" width="126" height="55" alt="logo" class="displayed"></a>
+</div>
+<div class="content">
+	<div class="left">
+		<ul class="inner-nav">
+			<li><a href="/">HOME</a></li>
+			<li><a href="/collection/">COLLECTIONS</a>
+				<ul class="sub-nav">
+					{% for c in collections %}
+					<li><a href="/collection/{{ c.id }}/">{{ c.name }}</a></li>
+					{% endfor %}
+				</ul>
+			</li>
+			<li><a href="#">PRESS</a></li>
+			<li><a href="/blog/">BLOG</a></li>
+			<li><a href="#">SHOP</a></li>
+			<li><a href="/about/">ABOUT</a></li>
+			<li><a href="/contact/">CONTACT</a></li>
+		</ul>
+	</div>
+	<div class="right">
+	{% block right %}{% endblock %}
+	</div>
+</div>
+<div>
+
+</div>
+</div>
+</body>
+<script src="http://cdn.bootcss.com/jquery/2.0.3/jquery.js"></script>
+{% block js %}{% endblock %}
+</html>

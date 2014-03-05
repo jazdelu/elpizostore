@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Elpizo Blog{% endblock %}
+
+{% block right %}
+	{% for blog in l %}
+	<div class="blog">
+	<p><a href= '/blog/{{ blog.id }}/'>{{ blog.title|upper }}</a></p>
+	<p class = 'date'>{{ blog.pub_date|date:"SHORT_DATE_FORMAT" }}</p>
+	<p class="img">
+		{% if blog.image_preview == 'h' %}
+		{% for image in blog.get_preview_images %}
+			{% if forloop.count <= 3 %}
+			<img src = '{{ image.thumbnail_h.url }}' />
+			{% endif %}
+		{% endfor %}
+		{% else %}
+		{% for image in blog.get_preview_images %}
+			{% if forloop.count < 3 %}
+			<img src = '{{ image.thumbnail_v.url }}' />
+			{% endif %}
+		{% endfor %}
+		{% endif %}
+		<a href='/blog/{{ blog.id }}/'><img src = '/static/images/more.jpg' class='more' width= '100px'></a>
+	</p>
+	</div>
+	<hr />
+	{% endfor %}
+
+{% endblock %}
