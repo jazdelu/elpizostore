@@ -52,3 +52,7 @@ coverage.xml
 
 # Sphinx documentation
 docs/_build/
+
+#Test File
+*.sqlite3
+manage.py
