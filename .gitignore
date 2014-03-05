@@ -56,3 +56,4 @@ docs/_build/
 #Test File
 *.sqlite3
 manage.py
+local_settings.py
