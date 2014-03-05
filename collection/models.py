@@ -5,7 +5,7 @@ from imagekit.processors import ResizeToFill
 class Collection(models.Model):
 	name = models.CharField(max_length = 128)
 	description = models.TextField(blank = True)
-	pub_date = models.DateTimeField(verbose_name='publish date',auto_now_add = True,auto_now = True)
+	pub_date = models.DateTimeField(verbose_name='publish date')
 
 	def __unicode__(self):
 		return self.name
