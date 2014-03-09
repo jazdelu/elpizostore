@@ -226,6 +226,6 @@ hr{
 	margin-right: 30px;
 	font-size: 16px;
 }
-.social a{
+.social a:hover{
 	color:#000;
 }
