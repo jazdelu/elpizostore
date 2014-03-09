@@ -1,45 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="keywords" content="Woman Fashion "/>
-<meta name="Description" content="Welcome to Elpizo, ahigh-end fashion brand where modern design meets the classics."/>
-<link rel="stylesheet" type="text/css" href="../static/css/style.css">
-<script src="http://cdn.bootcss.com/jquery/2.0.3/jquery.js"></script>
-<script type="text/javascript">
-</script>
-</head>
-<body>
-<div class="topInner">
-<a href ='#'><img src="../static/images/logo.gif" width="126" height="55" alt="logo" class="displayed"></a>
-</div>
-<div class="content">
-	<div class="left">
-		<ul class="inner-nav">
-			<li><a href="#">HOME</a></li>
-			<li><a href="#">COLLECTIONS</a>
-				<ul class="sub-nav">
-					<li><a href="#">AW13</a></li>
-					<li><a href="#">SS14</a></li>
-				</ul>
-			</li>
-			<li><a href="#">PRESS</a></li>
-			<li><a href="#">BLOG</a></li>
-			<li><a href="#">SHOP</a></li>
-			<li><a href="#">ABOUT</a></li>
-			<li><a href="#">CONTACT</a></li>
-		</ul>
-	</div>
-	<div class="right">
-		<img src="../static/images/1.jpg" width="160px" height="240px" />
-		<img src="../static/images/1.jpg" width="160px" height="240px" />
-		<img src="../static/images/1.jpg" width="160px" height="240px" />
-		<img src="../static/images/1.jpg" width="160px" height="240px" />
-		<img src="../static/images/1.jpg" width="160px" height="240px" />
-		</div>
-	</div>
-</div>
-<div>
+{% extends 'base.html' %}
+{% block title %}Elpizo Press{% endblock %}
 
-</div>
-</div>
-</body>
+{% block right %}
+		<h4>PRESS</h4>
+		<div class="list">
+		{% for p in l %}
+		<a href="{{ p.link }}"><img src="{{ p.cover.url }}" width='640px' title = "{{ p.name }}" /></a>
+		{% endfor %}
+		</div>
+{% endblock %}

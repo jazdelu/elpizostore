@@ -53,7 +53,8 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
-#Test File
+#Test File & Database File
 *.sqlite3
 manage.py
 local_settings.py
+*/migrations/
