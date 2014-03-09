@@ -2,14 +2,7 @@
 {% block title %}{{ c.name }}{% endblock %}
 
 {% block right %}
-		<h1>{{ c.name }}</h1>
-		<div class="cover">
-			<div>
-			 <p>&nbsp;&nbsp;{{ c.description|linebreaksbr }}</p>
-			 </div>
-			<img src="{{ cover }}" width="320px" height="480px" />
-		</div>
-		<h1>LOOKBOOK</h1>
+		<h4>LOOKBOOK</h4>
 		<div class="list">
 		{% for i in c.lookbooks.all %}
 		<img src="{{ i.image.url }}" width='320px' height='480px' />

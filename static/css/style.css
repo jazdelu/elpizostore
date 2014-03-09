@@ -1,12 +1,12 @@
 /*General properties*/
 body{
-	background-color:#fff;
 	margin:auto;
 	/*margin-left: 0px;
 	margin-top: 0px;
 	margin-right: 0px;
 	margin-bottom: 0px;*/
 	font-family:Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 100%;
 }
 
 H1{
@@ -23,11 +23,17 @@ H2{
 
 }
 h3{
-	font:normal 1em Arial;
+	font:bold .875em Arial;
 	color:#333;
 }
+h4{
+	font-style: bold;
+	font-size:.875em;
+	color:#babcbb;
+	text-align: left;
+}
 p{
-	font-size: 16px;
+	font-size: 14px;
 	font-family:Georgia, Arial, Helvetica;
 	font-weight: normal;
 	color: #333333;
@@ -38,7 +44,7 @@ p{
 span{
 	display: block;
 	line-height: 26px;
-	font-size: 16px;
+	font-size: .875em;
 	font-family: Trebuchet,sans-serif;
 	font-weight: normal;
 	color:#333
@@ -48,7 +54,7 @@ li{
 	margin: 10px 0px;
 }
 a{
-	font-size :14px;
+	font-size :0.875em;
 	font-family: "Helvetica Neue", Arial,"Yahei";
 	text-decoration: none;
 }
@@ -73,21 +79,22 @@ hr{
 .top{
 	margin: auto;
 	text-align: center;
-	padding-top:150px;
+	padding-top:160px;
+	background: transparent;
 }
 .logo{
 	width: 720px;
-	height:200px;
 	margin:auto;
-	padding:80px 80px;
+	padding:120px 100px;
 	text-align: center;
-	border: 5px solid #fff;
+	border: 3px solid #fff;
+	background: transparent;
 }
+
 .nav{
 	list-style: none;
 	margin:auto;
-	width: 840px;
-	display: block;
+	width: 75%;
 	text-align: center;	
 }
 
@@ -115,8 +122,8 @@ hr{
 	padding:20px;
 }
 .topInner a{
-	width:126px;
 	margin: auto;
+	display: block;
 }
 .left{
 	position: relative;
