@@ -5,7 +5,7 @@ body{
 	margin-top: 0px;
 	margin-right: 0px;
 	margin-bottom: 0px;*/
-	font-family:Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-family:'Droid Serif', Arial, Helvetica,sans-serif;
 	font-size: 100%;
 }
 
@@ -25,16 +25,18 @@ H2{
 h3{
 	font:bold .875em Arial;
 	color:#333;
+	font-family: 'Droid Serif',Helvetica,Arial,serif;
 }
 h4{
 	font-style: bold;
 	font-size:.875em;
 	color:#babcbb;
 	text-align: left;
+	font-family: 'Droid Serif',Helvetica,Arial,serif;
 }
 p{
 	font-size: 14px;
-	font-family:Georgia, Arial, Helvetica;
+	font-family:'Droid Serif', Arial, Helvetica;
 	font-weight: normal;
 	color: #333333;
 	margin: 0px;
@@ -45,7 +47,7 @@ span{
 	display: block;
 	line-height: 26px;
 	font-size: .875em;
-	font-family: Trebuchet,sans-serif;
+	font-family: 'Droid Serif', Arial, Helvetica;
 	font-weight: normal;
 	color:#333
 }
@@ -55,7 +57,7 @@ li{
 }
 a{
 	font-size :0.875em;
-	font-family: "Helvetica Neue", Arial,"Yahei";
+	font-family: 'Droid Serif', Arial, Helvetica;
 	text-decoration: none;
 }
 
@@ -159,7 +161,7 @@ hr{
 .left .sub-nav{
 	position: relative;
 	padding: 5px 0px 5px 30px;
-	list-style-type:circle;
+	list-style-type:disc;
 }
 
 .right{
