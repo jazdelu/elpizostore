@@ -4,6 +4,20 @@ from django.conf.urls.static import static
 from django.contrib import admin
 admin.autodiscover()
 
+
+from blog.models import Blog
+from blog.sitemap import BlogSitemap
+from collection.models import Collection
+from collection.sitemap import CollectionSitemap
+
+sitemaps = {
+	'blog':BlogSitemap,
+	'collection':CollectionSitemap,
+}
+
+
+
+
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'elpizostore.views.home', name='home'),
@@ -16,3 +30,7 @@ urlpatterns = patterns('',
 )+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
+urlpatterns += patterns('django.contrib.sitemaps.views',
+    (r'^sitemap\.xml$', 'index', {'sitemaps': sitemaps}),
+    (r'^sitemap-(?P<section>.+)\.xml$', 'sitemap', {'sitemaps': sitemaps}),
+)

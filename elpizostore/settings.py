@@ -25,9 +25,9 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = [
-    'test.elpizostore.com'
+    'www.elpizostore.com'
 ]
-
+SITE_ID=1
 
 # Application definition
 
@@ -38,7 +38,9 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
     'collection',
     'press',
     'blog',
@@ -62,6 +64,12 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
     'collection.processor.get_collection_list',
 )
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
+
+
 
 ROOT_URLCONF = 'elpizostore.urls'
 
