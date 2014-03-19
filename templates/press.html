@@ -6,6 +6,7 @@
 		<div class="list">
 		{% for p in l %}
 		<a href="{{ p.link }}"><img src="{{ p.cover.url }}" width='640px' title = "{{ p.name }}" /></a>
+		<hr />
 		{% endfor %}
 		</div>
 {% endblock %}
