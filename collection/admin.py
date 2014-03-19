@@ -10,6 +10,7 @@ class CollectionAdmin(admin.ModelAdmin):
 class LookbookAdmin(admin.ModelAdmin):
 	list_display = ('get_collection','image','set_to_cover')
 	fields = ('collection','image','set_to_cover','text',)
+	list_filter = ('collection',)
 
 	def get_collection(self,obj):
 		return obj.collection.name

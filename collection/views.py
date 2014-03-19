@@ -14,7 +14,7 @@ def get_cover_image(cid):
 	return url
 
 def get_latest_collection(request):
-	c = Collection.objects.all().order_by('-pub_date')
+	c = Collection.objects.all().order_by('name')
 	c = c[0]
 
 	return render_to_response('collection.html',{'c':c,'cover':get_cover_image(c.id) },context_instance=RequestContext(request))
