@@ -4,13 +4,23 @@ from collection.models import Collection, Lookbook
 # Register your models here.
 
 class CollectionAdmin(admin.ModelAdmin):
-	list_display = ('name','pub_date')
+	list_display = ('name','pub_date_format')
 	fields = ('name','description','pub_date')
+	def pub_date_format(self,obj):
+		return obj.pub_date.strftime("%Y-%m-%d %H:%M:%S")
+	pub_date_format.admin_order_field = 'pub_date'
+	pub_date_format.short_description = u'Publish Date'
 
 class LookbookAdmin(admin.ModelAdmin):
-	list_display = ('get_collection','image','set_to_cover')
-	fields = ('collection','image','set_to_cover','text',)
+	readonly_fields = ('image_tag',)
+	list_display = ('get_collection','image_tag','weight','pub_date_format')
 	list_filter = ('collection',)
+	fields = ('collection','image','image_tag','text','weight')
+	def pub_date_format(self,obj):
+		return obj.pub_date.strftime("%Y-%m-%d %H:%M:%S")
+	pub_date_format.admin_order_field = 'pub_date'
+	pub_date_format.short_description = u'Publish Date'
+
 
 	def get_collection(self,obj):
 		return obj.collection.name

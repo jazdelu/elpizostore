@@ -119,3 +119,31 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'u/')
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates/'),
 )
+
+
+# Django Suit configuration example
+SUIT_CONFIG = {
+    # header
+    'ADMIN_NAME': 'Elpizo Website Manager',
+    'HEADER_DATE_FORMAT': 'Y-m-d',
+    'HEADER_TIME_FORMAT': 'H:i',
+
+    # forms
+    # 'SHOW_REQUIRED_ASTERISK': True,  # Default True
+    # 'CONFIRM_UNSAVED_CHANGES': True, # Default True
+
+    # menu
+    'MENU':(
+        {'app':'auth','label':u'User','icon':'icon-user'},
+        {'app':'collection','label':u'Collection','icon':'icon-picture'},
+        {'app':'press','label':u'Press','icon':'icon-leaf'},
+        {'app':'blog','label':u'Blog','icon':'icon-edit'},
+    ),
+    # 'SEARCH_URL': '/admin/auth/user/',
+    'MENU_OPEN_FIRST_CHILD': True, # Default True
+    # 'MENU_EXCLUDE': ('auth.group',),
+
+
+    # misc
+    'LIST_PER_PAGE': 5
+}
