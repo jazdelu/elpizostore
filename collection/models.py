@@ -23,11 +23,11 @@ class Lookbook(models.Model):
 	collection = models.ForeignKey(Collection, related_name = 'lookbooks')
 	text = models.TextField(blank = True)
 	set_to_cover = models.BooleanField(default= False)
-	weight = models.IntegerField(default = 1,help_text = 'Numbers only .The lookbook is descending ordered by weight and publish datetime. Weight has highter priority.')
+	weight = models.IntegerField(verbose_name = 'order',default = 1,help_text = 'Numbers only .The lookbook is ordered by ascending order field and ascending publish datetime. Order has higher priority.')
 	pub_date = models.DateTimeField(verbose_name = 'publish date',auto_now_add = True,auto_now = True)
 
 	class Meta:
-		ordering = ['-collection','-weight','-pub_date',]
+		ordering = ['-collection','weight','-pub_date',]
 
 	def image_tag(self):
 		return u'<img src = "%s"/>' % self.thumbnail_small.url 
