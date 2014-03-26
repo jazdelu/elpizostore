@@ -58,3 +58,4 @@ docs/_build/
 manage.py
 local_settings.py
 */migrations/
+材料/
