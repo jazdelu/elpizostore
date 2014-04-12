@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'collection',
     'press',
     'blog',
+    'shop',
     'south',
     'imagekit',
 )
@@ -132,6 +133,7 @@ SUIT_CONFIG = {
     'MENU':(
         {'app':'auth','label':u'User','icon':'icon-user'},
         {'app':'collection','label':u'Collection','icon':'icon-picture'},
+        {'app':'shop','label':u'Shop','icon':'icon-shopping-cart'},
         {'app':'press','label':u'Press','icon':'icon-leaf'},
         {'app':'blog','label':u'Blog','icon':'icon-edit'},
     ),

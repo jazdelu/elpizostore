@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'collection',
     'press',
     'blog',
+    'shop',
     'south',
     'imagekit',
 )

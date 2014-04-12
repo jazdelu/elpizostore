@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Elpizo Online Shop{% endblock %}
+
+{% block right %}
+		<h4>SHOP</h4>
+		<div class="list">
+		{% for s in shops %}
+		<div class="shop">
+		<div class="shop_logo">
+		<a href="{{ s.link }}" class="logo"><img src="{{ s.logo.url }}"/></a>
+		</div>
+		<a href="{{ s.link }}" class="name">{{ s.name|upper }}</a>
+		</div>
+		{% endfor %}
+		</div>
+{% endblock %}
