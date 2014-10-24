@@ -7,6 +7,9 @@ class Collection(models.Model):
 	description = models.TextField(blank = True)
 	pub_date = models.DateTimeField(verbose_name='publish date')
 
+	class Meta:
+		ordering = ['-pub_date']
+
 	def __unicode__(self):
 		return self.name
 
