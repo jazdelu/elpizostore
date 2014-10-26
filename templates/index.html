@@ -12,17 +12,10 @@
 <meta name="baidu-site-verification" content="ADMWUP0Tsb" />
 <title>Elpizo</title>
 <link rel="stylesheet" type="text/css" href="/static/css/style.css">
-<style>
-	body{
-  background: url(/static/images/background.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-	}
-</style>
+
 </head>
 <body>
+<div class="wrap">
 <div class="top">
 <div class="logo">
 <img src="/static/images/logo.png"/>
@@ -41,9 +34,24 @@
 </div>
 <div class="footer">
 </div>
+</div>
 <script type="text/javascript">
 var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9bf2db21f152cc51ee03e2b886ebf016' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="/static/js/jquery.js"></script>
+<script type="text/javascript" src="/static/js/vegas.js"></script>
+<script>
+$(function() {
+  $.vegas('slideshow', {
+  delay:5000,
+  backgrounds:[
+  	{ src:'/static/images/background1.jpg', fade:1000 },
+  	{ src:'/static/images/background2.jpg', fade:1000 },
+  	{ src:'/static/images/background3.jpg', fade:1000 },
+  ]
+});
+});
 </script>
 </body>
 </html>

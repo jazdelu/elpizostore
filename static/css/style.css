@@ -7,15 +7,16 @@ body{
 	margin-bottom: 0px;*/
 	font-family:'Droid Serif', Arial, Helvetica,sans-serif;
 	font-size: 100%;
+	background-color: #fff;
 }
 
-H1{
+h1{
 	font-style: bold;
 	font-size: 1.5em;
 	color: #babcbb;
 	text-align: left;
 }
-H2{
+h2{
 	font: bold 1.5em;
 	color: #333333;
 	margin: 0px 10px;
@@ -65,7 +66,7 @@ a{
 img{
    border:0px; 
 }
-IMG.displayed {
+img.displayed {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -78,11 +79,18 @@ hr{
 	margin:3px 0px;
 }
 /*div properties*/
+.vegas-background{
+	z-index: -1;
+}
+.wrap{
+	z-index: 1024;
+}
 .top{
 	margin: auto;
 	text-align: center;
 	padding-top:160px;
 	background: transparent;
+	z-index: 1024;
 }
 .logo{
 	width: 720px;
@@ -90,7 +98,7 @@ hr{
 	padding:120px 100px;
 	text-align: center;
 	border: 3px solid #fff;
-	background: transparent;
+	z-index: 99;
 }
 
 .nav{
@@ -98,6 +106,8 @@ hr{
 	margin:auto;
 	width: 75%;
 	text-align: center;	
+	z-index: 2048;
+	overflow: hidden;
 }
 
 .nav li{
