@@ -30,7 +30,7 @@ class Lookbook(models.Model):
 	pub_date = models.DateTimeField(verbose_name = 'publish date',auto_now_add = True,auto_now = True)
 
 	class Meta:
-		ordering = ['-collection','weight','-pub_date',]
+		ordering = ['-collection','weight','pub_date',]
 
 	def image_tag(self):
 		return u'<img src = "%s"/>' % self.thumbnail_small.url 
