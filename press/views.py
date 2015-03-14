@@ -6,10 +6,15 @@ from django.http import Http404
 def get_latest_press(request):
 	p = ''
 	try:
-		l = Press.objects.all().order_by('-pub_date')
+		l = Press.objects.all()
 	except:
 		raise Http404
-	return render_to_response('press.html',{'p':p},context_instance=RequestContext(request))
+	p = l[0]
+	l = list(Press.objects.all())
+	i = l.index(p)
+	next_p = l[1]
+	prev_p =''
+	return render_to_response('press.html',{'p':p,'next_p':next_p,'prev_p':prev_p},context_instance=RequestContext(request))
 
 def get_press_by_id(request,pid):
 	p = ''
@@ -17,5 +22,19 @@ def get_press_by_id(request,pid):
 		p = Press.objects.get(id = pid)
 	except:
 		raise Http404
-	return render_to_response('press.html',{'p':p }, context_instance=RequestContext(request))
+	l = list(Press.objects.all())
+	i = l.index(p)
+	next_p =''
+	prev_p =''
+	if len(l)>1:
+		if (i == 0):
+			next_p = l[i+1]
+		elif (i == len(l)-1):
+			prev_p = l[i-1]
+		else:
+			next_p = l[i+1]
+			prev_p = l[i-1]
+	else:
+		pass
+	return render_to_response('press.html',{'p':p,'next_p':next_p,'prev_p':prev_p }, context_instance=RequestContext(request))
 

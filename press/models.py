@@ -16,6 +16,7 @@ class Press(models.Model):
 	class Meta:
 		verbose_name='Press'
 		verbose_name_plural='Press'
+		ordering = ['-pub_date',]
 
 	def image_tag(self):
 		return u'<img src = "%s"/>' % self.thumbnail_small.url 

@@ -3,10 +3,19 @@
 
 {% block right %}
 		<h4>PRESS</h4>
-		<div class="list">
-		{% for p in l %}
-		<a href="{{ p.link }}"><img src="{{ p.cover.url }}" width='640px' title = "{{ p.name }}" /></a>
-		<hr />
-		{% endfor %}
+		<div class="press">
+		<a href="{{ p.link }}"><img src="{{ p.cover.url }}" width='700px' title = "{{ p.name }}" /></a>
+		<div class="pag">
+		{% if prev_p %}
+			<a class="prev" href="/press/{{ prev_p.id }}/"><img src="/static/images/prev.jpg"></a>
+		{% else %}
+			<a class="prev" href="/press/#" style="visibility:hidden;"><img src="/static/images/prev.jpg"></a>
+		{% endif %}
+		{% if next_p %}
+			<a class="next" href="/press/{{ next_p.id }}/"><img src="/static/images/next.jpg"></a>
+		{% else %}
+			<a class="next" href="/press/#" style="visibility:hidden;"><img src="/static/images/next.jpg"></a>
+		{% endif %}
+		</div>
 		</div>
 {% endblock %}

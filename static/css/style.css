@@ -232,10 +232,17 @@ hr{
 	color:#ccc;
 }
 .more{
-	float: right;	
+	float: right;
+	opacity: 0.6;
+	-o-transition:opacity .2s ease-out, background .2s ease-in;
+	-ms-transition:opacity .2s ease-out, background .2s ease-in;
+	-moz-transition:opacity .2s ease-out, background .2s ease-in;
+	-webkit-transition:opacity .2s ease-out, background .2s ease-in;
+  /* ...and now override with proper CSS property */
+	transition:opacity .2s ease-out, background .2s ease-in;
 }
 .more:hover{
-	opacity: 0.8;
+	opacity: 1;
 }
 .social{
 	display: inline-block;
@@ -295,4 +302,32 @@ hr{
 	width: 100%;
 	display: inline-block;
 	vertical-align: middle;
+}
+
+/*---------------Press--------------*/
+.press{
+	overflow: hidden;
+	padding-bottom: 30px;
+}
+.press>.pag{
+	margin-top: 5px;
+	overflow: hidden;
+}
+.press>.pag>.prev{
+	float: left;
+}
+.press>.pag>.next{
+	float: right;
+}
+.press>.pag img{
+	opacity: 0.6;
+	-o-transition:opacity .2s ease-out, background .2s ease-in;
+	-ms-transition:opacity .2s ease-out, background .2s ease-in;
+	-moz-transition:opacity .2s ease-out, background .2s ease-in;
+	-webkit-transition:opacity .2s ease-out, background .2s ease-in;
+  /* ...and now override with proper CSS property */
+	transition:opacity .2s ease-out, background .2s ease-in;
+}
+.press>.pag img:hover{
+	opacity: 1;
 }
