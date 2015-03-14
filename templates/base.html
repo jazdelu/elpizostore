@@ -46,6 +46,10 @@ var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " 
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9bf2db21f152cc51ee03e2b886ebf016' type='text/javascript'%3E%3C/script%3E"));
 </script>
 </body>
-<script src="http://cdn.bootcss.com/jquery/2.0.3/jquery.js"></script>
+<script src="/static/js/jquery.js"></script>
+<script src="/static/js/jquery.pin.min.js"></script>
+<script>
+$(".inner-nav").pin();
+</script>
 {% block js %}{% endblock %}
 </html>

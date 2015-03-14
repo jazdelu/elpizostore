@@ -148,7 +148,7 @@ hr{
 	display: block;
 }
 .left{
-	position: relative;
+	position: static;
 	width: 30%;
 	background-color: #FFFFFF;
 	float: left;
