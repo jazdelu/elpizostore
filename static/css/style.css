@@ -104,11 +104,12 @@ hr{
 
 .nav{
 	list-style: none;
-	margin:auto;
-	width: 75%;
+	margin:0 auto;
+	width: 90%;
 	text-align: center;	
 	z-index: 2048;
 	overflow: hidden;
+	padding: 0px;
 }
 
 .nav li{
