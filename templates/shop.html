@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
-{% block title %}Elpizo Online Shop{% endblock %}
+{% block title %}Elpizo Shop{% endblock %}
 
 {% block right %}
-		<h4>SHOP</h4>
+		<h4>ONLINE SHOP & ENTITY STORE </h4>
 		<div class="list">
 		{% for s in shops %}
 		<div class="shop">
@@ -12,5 +12,26 @@
 		<a href="{{ s.link }}" class="name">{{ s.name|upper }}</a>
 		</div>
 		{% endfor %}
+		</div>
+		<div>
+		<h5>北京来福士</h5>
+		<span>北京市东城区东直门南大街1号来福士购物中心2层09铺<br/></span>
+		<span>2-9 Raffles City Shopping Center<br/></span>
+		<span>2nd Floor, No. 1 Dongzhimen South Street, Dongcheng District, Beijing</span>
+		 
+		<h5>上海港汇恒隆</h5>
+		<span>上海市徐汇区虹桥路1号港汇恒隆广场四楼439号铺<br/></span>
+		<span>439 Grand Gateway 66 <br/></span>
+		<span>4th Floor, No. 1 Hongqiao Road, Xuhui District, Shanghai</span>
+
+		<h5>杭州万象城</h5>
+		<span>浙江省杭州市江干区富春路万象城购物中心4楼487号铺<br/></span>
+		<span>487 The Mixc Mall<br/></span>
+		<span>4th Floor, Fuchun Road, Jianggan District, Zhejiang, Hangzhou</span>
+
+		<h5>武汉国际购物广场</h5>
+		<span>湖北省武汉市江汉区解放大道690号武汉国际购物广场B2-121<br/></span>
+		<span>B2-121 Wuhan International Plaza<br/></span>
+		<span>No. 690 Jiefang Avenue, Jianghan District, Wuhan, Hubei</span>
 		</div>
 {% endblock %}
