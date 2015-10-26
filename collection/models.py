@@ -2,6 +2,8 @@ from django.db import models
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill,ResizeToFit
 # Create your models here.
+
+
 class Collection(models.Model):
 	name = models.CharField(max_length = 128)
 	description = models.TextField(blank = True)
@@ -12,6 +14,11 @@ class Collection(models.Model):
 
 	def __unicode__(self):
 		return self.name
+
+class Background(models.Model):
+	collection = models.ForeignKey(Collection, verbose_name = 'Collection', related_name = 'backgrounds')
+	image = models.ImageField(upload_to = 'background/', verbose_name = 'Image')
+
 
 class Lookbook(models.Model):
 	image = models.ImageField(upload_to='lookbook/')

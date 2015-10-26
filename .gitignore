@@ -57,3 +57,5 @@ docs/_build/
 local_settings.py
 */migrations/
 材料/
+u/
+upload/

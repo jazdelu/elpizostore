@@ -1,15 +1,22 @@
 from django.contrib import admin
-from collection.models import Collection, Lookbook
+from collection.models import Collection, Lookbook, Background
 
 # Register your models here.
+
+class BackgroundInline(admin.TabularInline):
+	model = Background
+	extra = 1
 
 class CollectionAdmin(admin.ModelAdmin):
 	list_display = ('name','pub_date_format')
 	fields = ('name','description','pub_date')
+	inlines = [BackgroundInline,]
 	def pub_date_format(self,obj):
 		return obj.pub_date.strftime("%Y-%m-%d %H:%M:%S")
 	pub_date_format.admin_order_field = 'pub_date'
 	pub_date_format.short_description = u'Publish Date'
+
+
 
 class LookbookAdmin(admin.ModelAdmin):
 	readonly_fields = ('image_tag',)

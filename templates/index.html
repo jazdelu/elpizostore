@@ -50,10 +50,9 @@ $(function() {
   $.vegas('slideshow', {
   delay:7000,
   backgrounds:[
-  	{ src:'http://elpizo.qiniudn.com/background1.jpg', fade:1000 },
-  	{ src:'http://elpizo.qiniudn.com/background2.jpg', fade:1000 },
-  	{ src:'http://elpizo.qiniudn.com/background3.jpg', fade:1000 },
-  	{ src:'http://elpizo.qiniudn.com/background4.jpg', fade:1000 }
+  {% for b in collection.backgrounds.all %}
+  	{ src:'{{ b.image.url }}', fade:1000 },
+  {% endfor %}
   ]
 });
 });
