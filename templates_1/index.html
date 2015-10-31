@@ -11,7 +11,6 @@
 <meta name="google-site-verification" content="LAnXFRfp_E_k5z3lcxwkWY47DVt4uvqvrwFFjBOxEEQ" />
 <meta name="baidu-site-verification" content="ADMWUP0Tsb" />
 <title>Elpizo</title>
-<link rel="stylesheet" type="text/css" href="/static/materialize/css/materialize.min.css">
 <link rel="stylesheet" type="text/css" href="/static/css/style.css">
 <style>
 body{
@@ -22,21 +21,20 @@ body{
 <body>
 <div class="wrap">
 <div class="top">
-	<div class="logo valign-wrapper">
-	<img src="/static/images/logo.png"/>
-	</div>
+<div class="logo">
+<img src="/static/images/logo.png"/>
+</div>
 </div>
 <div class="content">
-<div class="nav-wrap">
-	<ul class="nav">
-		<li><a href="/">HOME</a></li>
-		<li><a href="/collection/">COLLECTIONS</a></li>
-		<li><a href="https://shop110570443.taobao.com">STORE</a></li>
-		<li><a href="/press/">PRESS</a></li>
-		<li><a href="/blog/">BLOG</a></li>
-		<li><a href="/about/">ABOUT</a></li>
-	</ul>
-</div>
+<ul class="nav">
+	<li><a href="/">HOME</a></li>
+	<li><a href="/collection/">COLLECTIONS</a></li>
+	<li><a href="/shop/">SHOP</a></li>
+	<li><a href="/press/">PRESS</a></li>
+	<li><a href="/blog/">BLOG</a></li>
+	<li><a href="/about/">ABOUT</a></li>
+	<li><a href="/contact/">CONTACT</a></li>
+</ul>
 </div>
 <div class="footer">
 </div>
@@ -52,10 +50,9 @@ $(function() {
   $.vegas('slideshow', {
   delay:7000,
   backgrounds:[
-  	{ src:'http://elpizo.qiniudn.com/background1.jpg', fade:1000 },
-  	{ src:'http://elpizo.qiniudn.com/background2.jpg', fade:1000 },
-  	{ src:'http://elpizo.qiniudn.com/background3.jpg', fade:1000 },
-  	{ src:'http://elpizo.qiniudn.com/background4.jpg', fade:1000 }
+  {% for b in collection.backgrounds.all %}
+  	{ src:'{{ b.image.url }}', fade:1000 },
+  {% endfor %}
   ]
 });
 });

@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}Elpizo Press{% endblock %}
 
-{% block content %}
-<div class="content container press">
+{% block right %}
 		<h4>PRESS</h4>
 		<div class="press">
 		<a href="{{ p.link }}"><img src="{{ p.cover.url }}" width='700px' title = "{{ p.name }}" /></a>
@@ -19,5 +18,4 @@
 		{% endif %}
 		</div>
 		</div>
-</div>
 {% endblock %}

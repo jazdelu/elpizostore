@@ -12,44 +12,92 @@
 <meta name="baidu-site-verification" content="ADMWUP0Tsb" />
 <title>{% block title %}{% endblock %}</title>
 <link rel="stylesheet" type="text/css" href="/static/css/style.css">
-<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="/static/materialize/css/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/static/fa/css/font-awesome.min.css">
 {% block style %}{% endblock %}
 </head>
 <body>
-<div class="topInner">
-<a href ='#'><img src="/static/images/logo.gif" width="126" height="55" alt="logo" class="displayed"></a>
-</div>
-<div class="content">
-	<div class="left">
-		<ul class="inner-nav">
-			<li><a href="/">HOME</a></li>
-			<li><a href="/collection/">COLLECTIONS</a>
-				<ul class="sub-nav">
-					{% for c in collections %}
-					<li><a href="/collection/{{ c.id }}/">{{ c.name }}</a></li>
-					{% endfor %}
+<header>
+	<div class="menu container">
+		<div class="row">
+			<div class="col s3">
+				<a href ='#'>
+					<img src="/static/images/logo.gif" height="64" alt="logo" class="displayed">
+				</a>
+			</div>
+			<div class="col s9">
+				<ul class="menubar">
+					<li><a href="/about/">ABOUT</a></li>
+					<li><a href="/blog/">BLOG</a></li>
+					<li><a href="/press/">PRESS</a></li>
+					<li><a href="https://shop110570443.taobao.com">STORE</a></li>
+					<li class="sub"><a href="/collection/">COLLECTIONS</a>
+					</li>
+					<li><a href="/">HOME</a></li>
 				</ul>
-			</li>
-			<li><a href="/shop/">SHOP</a></li>
-			<li><a href="/press/">PRESS</a></li>
-			<li><a href="/blog/">BLOG</a></li>
-			<li><a href="/about/">ABOUT</a></li>
-			<li><a href="/contact/">CONTACT</a></li>
-		</ul>
+			</div>
+			<ul class="sub-nav">
+				{% for c in collections %}
+				<li><a href="/collection/{{ c.id }}/">{{ c.name }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
 	</div>
-	<div class="right">
-	{% block right %}{% endblock %}
+</header>
+<main>
+{% block content %}
+{% endblock %}
+</main>
+<footer id = "footer">
+	<div class="container">
+		<div class="row">
+			<div class="col s5">
+				<h6>CONTACT INFORMATION</h6>
+				<p>UK - LONDON</p>
+				<p>148 Brick Lane, London, E1 6RU <br/></p>
+				<p>CHINA - SHANGHAI</p>
+				<p>SHANGHAI  No.1202, Building 1, 199 Lvshun Road, Shanghai 200080  <br/></p>
+				<p>info@elpizostore.com <br/></p>
+			</div>
+			<div class="col s5 offset-l2">
+				<h6>FOLLOW US</h6>
+				<div class="social">
+				<a class="fa fa-facebook"  href="https://www.facebook.com/pages/elpizo/357144480996552?fref=ts" class="icon-social-facebook" target="_blank"></a>
+				<a class="fa fa-weibo" href="http://www.weibo.com/2676025753/profile?rightmod=1&wvr=5&mod=personinfo" class="icon-social-weibo" target="_blank"></a>
+				<a class="fa fa-twitter" href=" https://twitter.com/ElpizoFashion" class="icon-social-twitter" target="_blank"></a>
+				<a class="fa fa-instagram" href=" https://instagram.com/elpizo_fashion" class="icon-social-instagram" target="_blank"></a>
+				</div>
+				<br/><br/>
+				<p>沪ICP备15041688号-1</p>
+			</div>
+
+		</div>
 	</div>
-</div>
+</footer>
+</body>
+<script src="/static/js/jquery.js"></script>
+<script src="/static/js/jquery.pin.min.js"></script>
+<script src="/static/materialize/js/materialize.min.js"></script>
 <script type="text/javascript">
 var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9bf2db21f152cc51ee03e2b886ebf016' type='text/javascript'%3E%3C/script%3E"));
 </script>
-</body>
-<script src="/static/js/jquery.js"></script>
-<script src="/static/js/jquery.pin.min.js"></script>
 <script>
-	$(".inner-nav").pin();
+	$(function(){
+		var timeout = "";
+		var sub = $(".sub-nav")
+		$(".sub").mouseover(function(){
+			clearTimeout(timeout);
+			$(sub).slideDown(500);
+		}).mouseleave(function(){
+			timeout  = setTimeout(function(){$(sub).slideUp(500);},50);
+		});
+		$(".sub-nav").mouseover(function(){
+			clearTimeout(timeout);
+		}).mouseleave(function(){
+			timeout  = setTimeout(function(){$(sub).slideUp(500);},50);
+		});
+	});
 </script>
 {% block js %}{% endblock %}
 </html>

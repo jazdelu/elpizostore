@@ -1,11 +1,18 @@
 {% extends 'base.html' %}
 {% block title %}Elpizo {{ c.name }}{% endblock %}
 
-{% block right %}
-		<h4>{{ c.name }}</h4>
-		<div class="list">
-		{% for i in c.lookbooks.all %}
-		<img src="{{ i.image.url }}" width='320px' height='480px' />
-		{% endfor %}
-		</div>
+{% block content %}
+
+<div class="content container collection">
+	<div class="row collection">
+	<div class="col s12 cover">
+		<img src="/static/images/cover.jpg" class="responsive-img">
+	</div>
+	{% for i in c.lookbooks.all %}
+	<div class="col s4 l">
+	<a href="#"><img src="{{ i.image.url }}" class="hoverable responsive-img" /></a>
+	</div>
+	{% endfor %}
+	</div>
+</div>
 {% endblock %}

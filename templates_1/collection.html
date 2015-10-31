@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Elpizo {{ c.name }}{% endblock %}
+
+{% block right %}
+		<h4>{{ c.name }}</h4>
+		<div class="list">
+		{% for i in c.lookbooks.all %}
+		<img src="{{ i.image.url }}" width='320px' height='480px' />
+		{% endfor %}
+		</div>
+{% endblock %}

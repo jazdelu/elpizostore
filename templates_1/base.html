@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="keywords" content="Woman Fashion "/>
+<meta name="description" content="Welcome to Elpizo, a premium fashion brand where modern design meets the classics."/>
+<meta name="robots" content="all" />
+<meta name="author" content="elpizostore.com" />
+<meta name="Copyright" content="Copyright elpizostore.com All Rights Reserved." />
+<meta name="Keywords" content="Elpizo,Elpizostore,Woman Fashion">
+
+<meta name="google-site-verification" content="LAnXFRfp_E_k5z3lcxwkWY47DVt4uvqvrwFFjBOxEEQ" />
+<meta name="baidu-site-verification" content="ADMWUP0Tsb" />
+<title>{% block title %}{% endblock %}</title>
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+{% block style %}{% endblock %}
+</head>
+<body>
+<div class="topInner">
+<a href ='#'><img src="/static/images/logo.gif" width="126" height="55" alt="logo" class="displayed"></a>
+</div>
+<div class="content">
+	<div class="left">
+		<ul class="inner-nav">
+			<li><a href="/">HOME</a></li>
+			<li><a href="/collection/">COLLECTIONS</a>
+				<ul class="sub-nav">
+					{% for c in collections %}
+					<li><a href="/collection/{{ c.id }}/">{{ c.name }}</a></li>
+					{% endfor %}
+				</ul>
+			</li>
+			<li><a href="/shop/">SHOP</a></li>
+			<li><a href="/press/">PRESS</a></li>
+			<li><a href="/blog/">BLOG</a></li>
+			<li><a href="/about/">ABOUT</a></li>
+			<li><a href="/contact/">CONTACT</a></li>
+		</ul>
+	</div>
+	<div class="right">
+	{% block right %}{% endblock %}
+	</div>
+</div>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9bf2db21f152cc51ee03e2b886ebf016' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+<script src="/static/js/jquery.js"></script>
+<script src="/static/js/jquery.pin.min.js"></script>
+<script>
+	$(".inner-nav").pin();
+</script>
+{% block js %}{% endblock %}
+</html>

@@ -1,11 +1,9 @@
 {% extends 'base.html' %}
 {% block title %}Elpizo Blog{% endblock %}
 
-{% block content %}
-<div class="content container blog">
-	<div class="row">
+{% block right %}
 	{% for blog in l %}
-	<div class="blog col s12">
+	<div class="blog">
 	<p><a href= '/blog/{{ blog.id }}/'>{{ blog.title|upper }}</a></p>
 	<p class = 'date'>{{ blog.pub_date|date:"SHORT_DATE_FORMAT" }}</p>
 	<p class="img">
@@ -27,6 +25,5 @@
 	</div>
 	<hr />
 	{% endfor %}
-	</div>
-</div>
+
 {% endblock %}
