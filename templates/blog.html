@@ -9,7 +9,7 @@
 	<div class="row">
 	<a href='/blog/{{ blog.id }}/' class="col s12">{{ blog.title|upper }}</a>
 	<p class = 'col s12 date'>{{ blog.pub_date|date:"SHORT_DATE_FORMAT" }}</p>
-	<p class="img col s10">
+	<p class="img col s9">
 		{% if blog.image_preview == 'h' %}
 		{% for image in blog.get_preview_images %}
 			{% if forloop.count <= 3 %}
