@@ -3,9 +3,8 @@
 
 {% block content %}
 <div class="content container press">
-		<h4>PRESS</h4>
 		<div class="press">
-		<a href="{{ p.link }}"><img src="{{ p.cover.url }}" width='700px' title = "{{ p.name }}" /></a>
+		<a href="{{ p.link }}"><img src="{{ p.cover.url }}" title = "{{ p.name }}" class="responsive-img" /></a>
 		<div class="pag">
 		{% if prev_p %}
 			<a class="prev" href="/press/{{ prev_p.id }}/"><img src="/static/images/prev.jpg"></a>
