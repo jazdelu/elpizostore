@@ -7,7 +7,7 @@
 	{% for blog in l %}
 	<div class="blog col s12">
 	<div class="row">
-	<a href='/blog/{{ blog.id }}/' class="col s12">{{ blog.title|upper }}</a>
+	<a href='/blog/{{ blog.id }}/' class="col s12 title">{{ blog.title|upper }}</a>
 	<p class = 'col s12 date'>{{ blog.pub_date|date:"SHORT_DATE_FORMAT" }}</p>
 	<p class="img col s9">
 		{% if blog.image_preview == 'h' %}
@@ -27,7 +27,7 @@
 	<a href='/blog/{{ blog.id }}/' class="col s2"><img src = '/static/images/more.jpg' class='more' width= '100px'></a>
 	</div>
 	</div>
-	<hr />
+
 	{% endfor %}
 	</div>
 </div>

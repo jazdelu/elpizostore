@@ -276,21 +276,23 @@ b{
 .collection .l{
 	margin-bottom: 1.5rem;
 }
+
+/*----------blog---------*/
+
 .blog{
 	display: block;
 	padding:10px;
 }
-.blog a{
+.blog .title{
 	color: #333;
-	font: normal 14px Arial;
 	letter-spacing: 2px;
-}
-.blog p{
-	font: normal 14px Arial;
-	margin:2px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 .blog .date{
 	color:#ccc;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 .more{
 	float: right;
