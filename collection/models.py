@@ -6,6 +6,7 @@ from imagekit.processors import ResizeToFill,ResizeToFit
 
 class Collection(models.Model):
 	name = models.CharField(max_length = 128)
+	cover = models.ImageField(upload_to = 'cover/', verbose_name = 'Cover', blank = True, null = True)
 	description = models.TextField(blank = True)
 	pub_date = models.DateTimeField(verbose_name='publish date')
 
