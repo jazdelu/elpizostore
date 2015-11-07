@@ -6,7 +6,15 @@
 <div class="content container collection">
 	<div class="row collection">
 	<div class="col s12 cover">
-		<img src="/static/images/cover.jpg" class="responsive-img">
+		{% if c %}
+		{% if c.cover %}
+		<img src="{{ c.cover.url}}" class="responsive-img">
+		{% endif %}
+		{% else %}
+		{% if collection.cover %}
+		<img src="{{ collection.cover.url }}" class="responsive-img">
+		{% endif %}
+		{% endif %}
 	</div>
 	{% for i in c.lookbooks.all %}
 	<div class="col s4 l">

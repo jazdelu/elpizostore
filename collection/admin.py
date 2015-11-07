@@ -9,7 +9,7 @@ class BackgroundInline(admin.TabularInline):
 
 class CollectionAdmin(admin.ModelAdmin):
 	list_display = ('name','pub_date_format')
-	fields = ('name','description','pub_date')
+	fields = ('name','cover','description','pub_date')
 	inlines = [BackgroundInline,]
 	def pub_date_format(self,obj):
 		return obj.pub_date.strftime("%Y-%m-%d %H:%M:%S")

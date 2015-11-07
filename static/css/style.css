@@ -399,4 +399,7 @@ b{
 .press>.pag img:hover{
 	opacity: 1;
 }
-
+/*---------------About--------------*/
+.about .store{
+	font-size: 12px;
+}

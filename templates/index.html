@@ -32,7 +32,6 @@ body{
 		<li><a href="/">HOME</a></li>
 		<li><a href="/collection/">COLLECTIONS</a></li>
 		<li><a href="https://shop110570443.taobao.com">STORE</a></li>
-		<li><a href="/press/">PRESS</a></li>
 		<li><a href="/blog/">BLOG</a></li>
 		<li><a href="/about/">ABOUT</a></li>
 	</ul>
@@ -52,10 +51,9 @@ $(function() {
   $.vegas('slideshow', {
   delay:7000,
   backgrounds:[
-  	{ src:'http://elpizo.qiniudn.com/background1.jpg', fade:1000 },
-  	{ src:'http://elpizo.qiniudn.com/background2.jpg', fade:1000 },
-  	{ src:'http://elpizo.qiniudn.com/background3.jpg', fade:1000 },
-  	{ src:'http://elpizo.qiniudn.com/background4.jpg', fade:1000 }
+  	{% for b in collection.backgrounds.all %}
+  	{ src:'{{ b.image.url }}', fade:1000 },
+  	{% endfor %}
   ]
 });
 });

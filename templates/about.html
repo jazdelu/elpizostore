@@ -5,7 +5,9 @@
 <div class="content container about">
 	<div class="row">
 	<div class="col s12 cover">
-		<img src="/static/images/cover.jpg" class="responsive-img">
+		{% if collection.cover %}
+		<img src="{{ collection.cover.url }}" class="responsive-img">
+		{% endif %}
 	</div>
 	<div class="col s12 text">
 		<h4>ABOUT ELPIZO</h4>
@@ -18,6 +20,7 @@ Elpizo carries with it a spirit of confidence and grace while being inspired by 
 		Each collection is made from the heart, and every detail takes into account this ethos. Each Garment made with hopeful passion and true care. Elpizo truly is a brand wearing its heart on its sleeve. 
 		</p>
 		<h4>FIND US</h4>
+		<div class="store">
 		<b>北京来福士</b>
 		<p>北京市东城区东直门南大街1号来福士购物中心2层09铺</p>
 		<p>2-9 Raffles City Shopping Center</p>
@@ -41,6 +44,7 @@ Elpizo carries with it a spirit of confidence and grace while being inspired by 
 		<p>山东省青岛市市南区山东路10号华润万象城 L226B号</p>
 		<p>L226B The Mixc Mall</p>
 		<p>10 Shandong Road,Nan District,Qingdao</p>
+		</div>
 	</div>
 </div>
 {% endblock %}
