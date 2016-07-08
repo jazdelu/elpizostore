@@ -1,41 +1,126 @@
 {% extends 'base.html' %}
 {% block title %}Elpizo Shop{% endblock %}
 
-{% block right %}
-		<h4>ONLINE SHOP & ENTITY STORE </h4>
-		<div class="list">
-		{% for s in shops %}
-		<div class="shop">
-		<div class="shop_logo">
-		<a href="{{ s.link }}" class="logo"><img src="{{ s.logo.url }}"/></a>
+{% block content %}
+<div class="content container">
+	<div class="row">
+		<div class="col l12">
+		{% if collection.cover %}
+		<img src="{{ collection.cover.url }}" class="responsive-img">
+		{% endif %}
 		</div>
-		<a href="{{ s.link }}" class="name">{{ s.name|upper }}</a>
-		</div>
-		{% endfor %}
-		</div>
-		<div>
-		<h5>北京来福士</h5>
-		<span>北京市东城区东直门南大街1号来福士购物中心2层09铺<br/></span>
-		<span>2-9 Raffles City Shopping Center<br/></span>
-		<span>2nd Floor, No. 1 Dongzhimen South Street, Dongcheng District, Beijing</span>
+
+		<div class="col l12 text">
+		<h4> STOCKLIST </h4>
+		<h6>北京来福士</h6>
+
+		<p>地址：北京市东城区东直门南大街1号来福士购物中心2层09铺</p>
+
+		<p>Raffles City Shopping Center Beijing</p>
+
+		<p>Shop2-09 (2nd Floor), No. 1 Dongzhimen South Street, Dongcheng District, Beijing</p>
+
+		 <br/><br/>
+
+		<h6>北京朝北大悦城</h6>
+
+		<p>地址：北京市朝阳区朝阳北路101号朝阳大悦城2F-06号</p>
+
+		<p>Chaoyang Joy City Beijing</p>
+
+		<p>2F-06 Chaoyang Joy City, No.101 Chaoyang North Street, Chaoyang District, Beijing</p>
+		 <br/><br/>
 		 
-		<h5>南京德基</h5>
-		<span>南京市中山路18号德基广场二期F415号商铺<br/></span>
-		<span>F415 Deji Plaza<br/></span>
-		<span>18 Zhongshan Road, Nanjing</span>
 
-		<h5>杭州万象城</h5>
-		<span>浙江省杭州市江干区富春路万象城购物中心4楼487号铺<br/></span>
-		<span>487 The Mixc Mall<br/></span>
-		<span>4th Floor, Fuchun Road, Jianggan District, Zhejiang, Hangzhou</span>
+		<h6>北京三里屯</h6>
 
-		<h5>南通八佰伴</h5>
-		<span>南通市人民中路45号八佰伴1楼<br/></span>
-		<span>1st Floor, No. 45 Renming Zhong Road, Nantong</span>
+		<p>地址：北京市朝阳区三里屯太古里南区S1－16号 </p>
 
-		<h5>青岛万象城</h5>
-		<span>山东省青岛市市南区山东路10号华润万象城 L226B号<br/></span>
-		<span>L226B The Mixc Mall<br/></span>
-		<span>10 Shandong Road,Nan District,Qingdao</span>
+		<p>Taikoo Li Sanlitun Beijing</p>
+
+		<p>S1-16 Taikoo Li Sanlitun South, Chaoyang District, Beijing</p>
+		 <br/><br/>
+		 
+
+		<h6>北京芳草地</h6>
+
+		<p>地址：北京市朝阳区东大桥9号侨福芳草地LG1－19号</p>
+
+		<p>Parkview Green Beijing</p>
+
+		<p>LG1-19 Parkview Green, No.9 Dongdaqiao Road, Chaoyang District, Beijing</p>
+		 <br/><br/>
+		 
+
+		<h6>上海K11</h6>
+
+		<p>地址：上海市黄浦区淮海中路300号K11地下一层B112</p>
+
+		<p>K11 Shanghai</p>
+
+		<p>B122(Basement 1) K11, No.300 Middle Huaihai Road, Huangpu District, Shanghai</p>
+
+		  <br/><br/>
+
+		<h6>杭州万象城</h6>
+
+		<p>地址：浙江省杭州市江干区富春路万象城购物中心4楼487号商铺</p>
+
+		<p>The Mixc Mall Hangzhou</p>
+
+		<p>Shop 487(4th Floor), Fuchun Road, Jianggan District, Hangzhou City, Zhejiang Province</p>
+
+		  <br/><br/>
+
+		<h6>长春卓展</h6>
+
+		<p>地址：吉林省长春市重庆路1255号卓展购物中心4楼</p>
+
+		<p>Zhuozhan Shopping Center Changchun</p>
+
+		<p>4th floor, Zhuozhan Shopping Center, No.1255 Chongqing Road, Changchun City, Jilin Province</p>
+
+		  <br/><br/>
+
+		<h6>沈阳万象城</h6>
+
+		<p>地址：辽宁省沈阳市和平区青年大街288号万象城4层415</p>
+
+		<p>Shenyang The Mixc</p>
+
+		<p>Shop 415(4th floor), The Mixc Shopping Mall, No.288 Qingnian Street, Heping District, Shenyang City, Liaoning Province</p>
+
+		  <br/><br/>
+
+		<h6>合肥银泰</h6>
+
+		<p>地址：安徽省合肥市庐阳区长江中路98号</p>
+
+		<p>Hefei Yintai Center</p>
+
+		<p>No.98 Middle Changjiang Road, Luyang District, Hefei City, Anhui Province</p>
+
+		  <br/><br/>
+
+		<h6>成都远洋太古里</h6>
+
+		<p>地址：四川省成都中纱帽街8号太古里2层2330号</p>
+
+		<p>Sino-Ocean Taikoo Li Chengdu</p>
+
+		<p>Shop 2330(2nd floor) Sino-Ocean Taikoo Li, No.8 Zhongshamao Street, Chengdu City, Sichuan Province</p>
+
+		  <br/><br/>
+
+		<h6>贵阳星力元隆购物广场</h6>
+
+		<p>地址：贵州省贵阳市云岩区北京路203号 1F－24A</p>
+
+		<p>Xingliyuanlong Shopping Mall Guiyang</p>
+
+		<p>1F－24A, No.203 Beijing Road, Yunyan District, Guiyang City, Guizhou Province</p>
+
 		</div>
+	</div>
+</div>
 {% endblock %}

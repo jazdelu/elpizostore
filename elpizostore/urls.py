@@ -26,7 +26,7 @@ urlpatterns = patterns('',
     url(r'^collection/', include('collection.urls')),
     url(r'^blog/', include('blog.urls')),
     url(r'^press/', include('press.urls')),
-    url(r'^shop/', include('shop.urls')),
+    url(r'^stocklist/', include('shop.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
