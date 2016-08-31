@@ -2,15 +2,17 @@
 {% block title %}{{ b.title }}{% endblock %}
 
 {% block content %}
+<div class="content container b_content">
 	<div class="blog">
-	<p><a href= '/blog/{{ b.id }}/'>{{ b.title|upper }}</a></p>
+	<p><a href= '/blog/{{ b.id }}/' style="color:#666;" >{{ b.title|upper }}</a></p>
 	<p class = 'date'>{{ b.pub_date|date:"SHORT_DATE_FORMAT" }}</p>
 	<br/>
 	<div class="content">
 		{% for i in b.images.all %}
-		 <img src = "{{ i.image.url }}" width = "700px" />
+		 <img src = "{{ i.image.url }}" class="responsive-img" />
 		 <br/><br/>
 		{% endfor %}
 	</div>
 	</div>
+</div>
 {% endblock %}
