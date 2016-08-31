@@ -7,7 +7,7 @@
 	<p><a href= '/blog/{{ b.id }}/' style="color:#666;" >{{ b.title|upper }}</a></p>
 	<p class = 'date'>{{ b.pub_date|date:"SHORT_DATE_FORMAT" }}</p>
 	<br/>
-	<div class="content">
+	<div class="content" style="text-align:center;">
 		{% for i in b.images.all %}
 		 <img src = "{{ i.image.url }}" class="responsive-img" />
 		 <br/><br/>
